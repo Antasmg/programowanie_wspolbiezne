@@ -7,11 +7,16 @@
 
 int main()
 {
+    /* Ciężki proces - z natury mają być od siebie odizolowane */
 	int id = fork();
-	id = fork();
-	id = fork();
-	id = fork();
-	printf("Hello from ID:%d\n", id);
+    int p2 = getpid(); /* potomek zwróci id przodka, a przodek dostanie jakiś inny pid - y */
+    int p3 = getppid(); /* przodek dostanie pid shellu, a potomek dostanie y */ /* Get parent parent id */
+    int p4 = wait(NULL); /* Zwraca pid procesu który się zakończył - zwróci id przodka, dla potomka zwróci -1 (nie krytyczny error) */
+
+	printf("ID:\t%d\n", id);
+	printf("pid:\t%d\n", p2);
+	printf("ppid:\t%d\n", p3);
+	printf("wait:\t%d\n", p4);
 
     if(id == 0){
         printf("I am the new guy\n");
