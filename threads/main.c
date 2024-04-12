@@ -38,11 +38,12 @@ int main()
     printf("g in main = %d\n", g);
     printf("t in main = %d\n", t);
     /* Dla każdego wątku detach albo join */
-    //pthread_exit(NULL); /* Koniec tego wątku (maina) - nie dochodzimy do startera, gdzie jest exit, reszta wątków będzie działać */
     pthread_detach(tid2); /* Zapomnij o wątku gdy on się skończy, nie można potem joina zrobić */
     printf("g in main = %d\n", g);
     printf("t in main = %d\n", t);
+    //pthread_exit(NULL); /* Koniec tego wątku (maina) - nie dochodzimy do startera, gdzie jest exit, reszta wątków będzie działać */
     pthread_join(tid1, NULL); /* Czekamy na zakończenie wątku tid1 */
+    //pthread_join(tid2, NULL); /* Czekamy na zakończenie wątku tid1 */
     printf("g in main = %d\n", g);
     printf("t in main = %d\n", t);
 	
