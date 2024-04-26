@@ -2,6 +2,7 @@
     "files.associations": {
         "pthread.h": "c",
         "stdio.h": "c",
-        "types.h": "c"
+        "types.h": "c",
+        "semaphore.h": "c"
     }
 }
