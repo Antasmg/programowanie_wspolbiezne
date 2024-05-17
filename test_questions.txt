@@ -1,0 +1,31 @@
+Zadania abcd
+
+zad 1
+Dla a na pewno 4, a 2 i 3 może, nie może być 1 i więcej niż 4
+Dla b na pewno 15, inne nie
+Dla c na pewno 27, inne nie
+Dla d na pewno 53, 51 i 52 może, nie może być 50 i więcej niż 53
+
+zad 2
+Na pewno nic nie będzie
+Może być AABB albo BBAA
+Nigdy ABAB lub BABA
+
+zad 3
+Na pewno nic nie będzie
+Może być BBA (bez drugiego A, bo utknęło (jak nie utknie to się wykona)), ABBA (bo cond_wait odblokuje mutex) 
+
+zad 4 (część jest znana)
+a w potomnym        -   0
+a w macierzystym    -   202895
+b w potomnym        -   202895 (znana)
+b w macierzystym    -   202894
+c w potomnym        -   202894 (znana)
+c w macierzystym    -   202600 (znana)
+d w potomnym        -   -1
+d w macierzystym    -   202895
+
+zad 5
+zaznaczyć funkcje które mogą np potencjalnie zablokować wątek (wait, sem_wait, mutex_lock, pthread_join, cond_wait)
+
+Mogą być semaphory, mogą być bariery, co się może na wyjściu pojawić
